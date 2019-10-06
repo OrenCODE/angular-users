@@ -42,9 +42,9 @@ const port = process.env.PORT || 8080;
 app.use('/api/users', users);
 
 // index Route
-app.get('/', (req,res) => {
-   res.send('Invalid Endpoint');
-});
+// app.get('/', (req,res) => {
+//    res.send('Invalid Endpoint');
+// });
 
 app.get('*', (req,res) => {
 res.sendFile(path.join(__dirname, 'public/index.html'))
