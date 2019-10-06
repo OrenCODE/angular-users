@@ -683,10 +683,10 @@ var AuthService = /** @class */ (function () {
         };
     }
     AuthService.prototype.registerUser = function (user) {
-        return this.http.post('http://localhost:5001/api/users/register', user, httpOptions);
+        return this.http.post('/api/users/register', user, httpOptions);
     };
     AuthService.prototype.authenticateUser = function (user) {
-        return this.http.post('http://localhost:5001/api/users/authenticate', user, httpOptions);
+        return this.http.post('/api/users/authenticate', user, httpOptions);
     };
     AuthService.prototype.storeUserData = function (token, user) {
         localStorage.setItem('id_token', token);
@@ -696,7 +696,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.getProfile = function () {
         this.loadToken();
-        return this.http.get('http://localhost:5001/api/users/profile', { headers: { Authorization: this.authToken } });
+        return this.http.get('/api/users/profile', { headers: { Authorization: this.authToken } });
     };
     AuthService.prototype.loadToken = function () {
         this.authToken = localStorage.getItem('id_token');
